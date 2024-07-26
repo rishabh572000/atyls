@@ -1,0 +1,75 @@
+@import 'variables';
+
+@mixin flexBox() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p,
+h3 {
+  line-height: 0;
+}
+
+.App {
+
+  .heading {
+    color: red
+  }
+}
+
+.container {
+  background-color: $base-color;
+  width: 100%;
+  min-height: 100vh;
+  @include flexBox();
+}
+
+.login-card {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 463px;
+  padding: 20px;
+  background-color: $theme-color;
+  border: 2px solid #fff;
+
+  .heading {
+    text-align: center;
+
+    p {
+      color: $text-dark;
+      font-size: 14px;
+    }
+
+    h3 {
+      color: #fff;
+      font-size: 18px;
+      line-height: 21px;
+
+    }
+  }
+
+  form {
+    position: relative;
+
+    .input-group {
+      margin-top: 10px;
+      label {
+        color: $text-light;
+      }
+
+      input {
+        margin-top: 10px;
+        width: 100%;
+        border: 1px solid #555;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px;
+      }
+
+    }
+  }
+}
