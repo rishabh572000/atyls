@@ -31,6 +31,8 @@ input{
   color:#fff;
   box-sizing: border-box;
   cursor: pointer;
+  outline: none;
+  border: none;
 }
 
 .App {
@@ -55,6 +57,21 @@ input{
   padding: 35px 20px;
   background-color: $theme-color;
   border: 2px solid #fff;
+  position: relative;
+
+  
+  .cross-icon{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $base-color;
+    @include flexBox();
+    cursor: pointer;
+    color: #fff;
+  }
 
   .heading {
     text-align: center;
@@ -120,4 +137,19 @@ input{
   overflow: hidden;
   border-radius: 50%;
   background-color: $theme-color;
+}
+
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
 }

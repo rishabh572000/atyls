@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import OButton from '../shared/OButton'
+import OModal from '../shared/OModal'
+import SignCard from '../login/SignCard'
 
 function PostComment() {
+  const [openAutModal, setAuthModal] = useState(false)
+
+  const handlePost = () =>{
+    setAuthModal(!openAutModal)
+    console.log('moahn')
+  }
+
   return (
     <div className='comment-card'>
       <form>
@@ -12,10 +21,13 @@ function PostComment() {
         </textarea>
         <div className='button-position'>
           <div className='button-size'>
-            <OButton />
+            <OButton label='Post' onClick={()=>handlePost()} />
           </div>
         </div>
       </form>
+      {openAutModal && <OModal>
+        <SignCard setAuthModal={setAuthModal} />
+      </OModal>}
 
     </div>
   )

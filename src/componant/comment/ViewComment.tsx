@@ -1,5 +1,4 @@
 import React from 'react'
-import Emoji from '../shared/Icon';
 import { RxDotsHorizontal } from "react-icons/rx";
 import { TiMessage } from "react-icons/ti";
 import Icon from '../shared/Icon';
