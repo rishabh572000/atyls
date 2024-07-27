@@ -2,7 +2,7 @@ import React from 'react'
 
 function OButton() {
   return (
-    <div>OButton</div>
+    <div className='button'>OButton</div>
   )
 }
 

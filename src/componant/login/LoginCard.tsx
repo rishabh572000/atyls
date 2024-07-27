@@ -1,4 +1,5 @@
 import React from 'react'
+import OButton from '../shared/OButton'
 
 function LoginCard() {
   return (
@@ -14,15 +15,17 @@ function LoginCard() {
             <input type='text' id="email" name="email" placeholder='Enter your email or username' /> 
           </div>
           <div className='input-group'>
+            <span>
             <label htmlFor="password">Password</label>
             <label>Forget password?</label>
+            </span>
             <br />
             <input type='password' id="password" name="password" placeholder='Enter your password' /> 
           </div>
           <div className='login'>
-
+            <OButton />
           </div>
-          <p>Not registered yet? Registered</p>
+          <p className='not-registered'>Not registered yet? Registered</p>
         </form>
       
     </div>

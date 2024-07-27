@@ -1,0 +1,141 @@
+@import 'variables';
+
+@mixin flexBox() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.container{
+
+    flex-direction: column;
+    .comment-heading{
+        max-width: 40%;
+
+        h3{
+            font-weight: 500;
+            font-size: 28px;
+            color: $text-light;
+        }
+        p{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-dark;
+        }
+    }
+
+    .comment-item{
+        width: 40%;
+    }
+}
+
+.comment-card{
+    background-color: $theme-color;
+    width: 100%;
+    border-radius: 8px;
+    border:2px solid $text-dark;
+    padding: 20px;
+    margin-bottom: 16px;
+
+    form{
+        width: 100%;
+
+        label{
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21px;
+            color: $text-light;
+        }
+        textarea{
+            margin-top: 16px;
+            width: 100%;
+            height: 78px;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            color: #d1d1d1;
+            background-color: $base-color;
+            resize: none;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            outline: none;
+        }
+        .button-position{
+            display: flex;
+            justify-content: flex-end;
+
+            .button-size{
+                width: 25%;
+            }
+        }
+    }
+}
+
+.profile-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left{
+        display: flex;
+        align-items: center;
+
+        img{
+            width: 44px;
+            height: 44px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        span{
+            margin-left: 16px;
+
+            .name{
+                font-size: 16px;
+                font-weight: 500;
+                color: $text-light;
+                margin-bottom: 5px;
+            }
+            .time{
+                font-size: 14px;
+                line-height: 10px;
+                font-weight: 500;
+                color: $text-dark;
+
+            }
+        }
+    }
+    .right{
+        color: $text-light;
+        cursor: pointer;
+    }
+}
+
+.comment-view{
+    margin-top:20px;
+    background-color: $base-color;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    gap:16px;
+
+    .comment{
+        font-weight: 400;
+        line-height: 24px;
+        font-size: 16px;
+        color: $text-dark;
+        margin-top: -4px;
+    }
+}
+
+.comment-count{
+    color: $text-dark;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 14px;
+}
