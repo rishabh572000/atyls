@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import OButton from '../shared/OButton'
 import { RxCrossCircled } from "react-icons/rx";
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -10,7 +10,19 @@ interface CardProps{
 const LoginCard: React.FC<CardProps> = ({setAuthModal}) => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email:'',
+    password:''
+  })
   const isModal = ['/', '/login'].includes(location.pathname)
+
+  const handleLogin = () =>{
+    if(formData.email==='Rishabh572000' && formData.password==='Atlys'){
+      console.log('mohan', formData)
+      sessionStorage.setItem('auth', JSON.stringify(formData));
+    }
+    navigate('/comment')
+  }
 
   return (
     <div className='login-card'>
@@ -23,7 +35,7 @@ const LoginCard: React.FC<CardProps> = ({setAuthModal}) => {
           <div className='input-group'>
             <label htmlFor="email">Email or UserName</label>
             <br />
-            <input type='text' id="email" name="email" placeholder='Enter your email or username' /> 
+            <input type='text' id="email" name="email" placeholder='Enter your email or username' value={formData?.email} onChange={(e)=>setFormData((pre)=>({...pre, email:e.target.value}))} /> 
           </div>
           <div className='input-group'>
             <span>
@@ -31,10 +43,10 @@ const LoginCard: React.FC<CardProps> = ({setAuthModal}) => {
             <label>Forget password?</label>
             </span>
             <br />
-            <input type='password' id="password" name="password" placeholder='Enter your password' /> 
+            <input type='password' id="password" name="password" placeholder='Enter your password' value={formData?.password} onChange={(e)=>setFormData((pre)=>({...pre, password:e.target.value}))} /> 
           </div>
           <div className='login'>
-            <OButton label='Login now' onClick={()=>navigate('/comment')}  />
+            <OButton label='Login now' onClick={()=>handleLogin()}  />
           </div>
           <p className='not-registered' onClick={()=>navigate('/sign-up')}  >Not registered yet? Registered</p>
         </form>

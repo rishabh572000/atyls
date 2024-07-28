@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import SignUp from './pages/SignUp';
+import { AppProvider } from './context/appContext';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/comment",
-    element: <Comment />,
+    element: <Comment />
   },
 ]);
 
@@ -30,9 +31,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
+      <AppProvider>
       <RouterProvider router={router} />
-
-      {/* <Comment /> */}
+      </AppProvider>
     </div>
   );
 }
