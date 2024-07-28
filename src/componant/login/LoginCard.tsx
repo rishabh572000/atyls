@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import OButton from '../shared/OButton'
 import { RxCrossCircled } from "react-icons/rx";
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useAppContext } from '../../context/appContext';
 
 interface CardProps{
   setAuthModal?: (open: boolean) => void;
@@ -9,6 +10,7 @@ interface CardProps{
 
 const LoginCard: React.FC<CardProps> = ({setAuthModal}) => {
   const location = useLocation();
+  const { login } = useAppContext();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email:'',
@@ -18,8 +20,8 @@ const LoginCard: React.FC<CardProps> = ({setAuthModal}) => {
 
   const handleLogin = () =>{
     if(formData.email==='Rishabh572000' && formData.password==='Atlys'){
-      console.log('mohan', formData)
       sessionStorage.setItem('auth', JSON.stringify(formData));
+      login()
     }
     navigate('/comment')
   }

@@ -5,6 +5,7 @@ import { useAppContext } from './appContext';
 const ProtectedRoute: React.FC = () => {
   const { isAuthenticated } = useAppContext();
 
+
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 };
 

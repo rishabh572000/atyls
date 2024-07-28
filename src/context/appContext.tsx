@@ -40,8 +40,6 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
                 console.error('Failed to parse auth from sessionStorage', error);
             }
         }
-       console.log('rama')
-
 
     }, [])
 
