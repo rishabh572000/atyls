@@ -1,14 +1,18 @@
 import React from 'react'
 import OButton from '../shared/OButton'
 import { RxCrossCircled } from "react-icons/rx";
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface CardProps{
-  setAuthModal: (open: boolean) => void;
+  setAuthModal?: (open: boolean) => void;
 }
 const SignCard: React.FC<CardProps> = ({setAuthModal}) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isModal = ['/', '/sign-up'].includes(location.pathname)
   return (
     <div className='login-card'>
-       <span className='cross-icon' onClick={()=>setAuthModal(false)}><RxCrossCircled /></span>
+       {!isModal && <span className='cross-icon' onClick={()=>setAuthModal?.(false)}><RxCrossCircled /></span>}
         <div className='heading'>
           <p>SIGN UP</p>
           <h3>Create an account to continue</h3>
@@ -32,9 +36,9 @@ const SignCard: React.FC<CardProps> = ({setAuthModal}) => {
             <input type='password' id="password" name="password" placeholder='Enter your password' /> 
           </div>
           <div className='login'>
-            <OButton label='Continue' />
+            <OButton label='Continue' onClick={()=>navigate('/comment')} />
           </div>
-          <p className='not-registered'>Already have an account? Login →</p>
+          <p className='not-registered'  onClick={()=>navigate('/login')} >Already have an account? Login →</p>
         </form>
       
     </div>

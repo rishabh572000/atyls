@@ -6,6 +6,7 @@ import ViewComment from '../componant/comment/ViewComment'
 function Comment() {
   return (
     <div className='container'>
+      <div className='comment-container'>
         <div className='comment-heading'>
             <h3>Hello Jane</h3>
             <p>How are you doing today? Would you like to share something with the community 🤗</p>
@@ -14,6 +15,7 @@ function Comment() {
             <PostComment />
 
             <ViewComment />
+        </div>
         </div>
     </div>
   )
