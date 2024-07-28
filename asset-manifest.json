@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/atyls/static/css/main.d262c003.css",
+    "main.js": "/atyls/static/js/main.2a024f8b.js",
+    "static/js/453.c83e7057.chunk.js": "/atyls/static/js/453.c83e7057.chunk.js",
+    "index.html": "/atyls/index.html",
+    "main.d262c003.css.map": "/atyls/static/css/main.d262c003.css.map",
+    "main.2a024f8b.js.map": "/atyls/static/js/main.2a024f8b.js.map",
+    "453.c83e7057.chunk.js.map": "/atyls/static/js/453.c83e7057.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d262c003.css",
+    "static/js/main.2a024f8b.js"
+  ]
+}
