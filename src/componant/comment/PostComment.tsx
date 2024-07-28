@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import OButton from '../shared/OButton'
 import OModal from '../shared/OModal'
 import SignCard from '../login/SignCard'
+import { useAppContext } from '../../context/appContext';
 
 function PostComment() {
+  const { isAuthenticated } = useAppContext();
   const [openAutModal, setAuthModal] = useState(false)
 
   const handlePost = () =>{
-    setAuthModal(!openAutModal)
-    console.log('moahn')
+    if(!isAuthenticated){
+      setAuthModal(!openAutModal)
+    }
   }
 
   return (

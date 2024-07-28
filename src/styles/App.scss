@@ -98,6 +98,10 @@ input{
       label {
         color: $text-light;
       }
+      .password-label{
+        display: flex;
+        justify-content: space-between;
+      }
 
       input {
        margin-top:10px
@@ -154,9 +158,22 @@ input{
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
 
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 

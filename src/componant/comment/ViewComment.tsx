@@ -1,35 +1,41 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { RxDotsHorizontal } from "react-icons/rx";
 import { TiMessage } from "react-icons/ti";
 import Icon from '../shared/Icon';
+import { postCommentData } from '../../utils/constant';
 
 
 function ViewComment() {
+
+
   return (
-    <div className='comment-card'>
-      <div className='profile-info'>
-        <div className='left'>
-          <img src='/media/images/profile2.jpg' alt='profile'/>
+    <>
+      {postCommentData?.map((val, ind) => (<div className='comment-card' key={ind}>
+        <div className='profile-info'>
+          <div className='left'>
+            <img src={`/media/images/${val?.image}`} alt='profile' />
+            <span>
+              <div className='name'>{val?.name}</div>
+              <div className='time'>{val?.time}</div>
+            </span>
+          </div>
+          <div className='right'>
+            <RxDotsHorizontal />
+          </div>
+        </div>
+
+        <div className='comment-view'>
           <span>
-            <div className='name'>Theresa Webb</div>
-            <div className='time'>5min ago</div>
+            <Icon library="fa" name="FaBeer" size={20} color="orange" />
           </span>
+          <div className='comment'>{val?.text}</div>
         </div>
-        <div className='right'>
-        <RxDotsHorizontal />
-        </div>
-      </div>
 
-      <div className='comment-view'>
-        <span>
-      <Icon library="fa" name="FaBeer" size={20} color="orange" />
-      </span>
-          <div className='comment'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</div>
-      </div>
+        <div className='comment-count'> <TiMessage size={20} /> {val?.comments} comments</div>
 
-      <div className='comment-count'> <TiMessage  size={20} /> 24 comments</div>
-      
-    </div>
+      </div>))}
+    </>
+
   )
 }
 

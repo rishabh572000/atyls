@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PostComment from '../componant/comment/PostComment'
 import '../styles/comment.scss'
 import ViewComment from '../componant/comment/ViewComment'
 
 function Comment() {
+  const [updateComment, setUpdateComment] = useState()
   return (
     <div className='container'>
       <div className='comment-container'>

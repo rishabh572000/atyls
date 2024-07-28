@@ -27,6 +27,7 @@ const LoginCard: React.FC<CardProps> = ({setAuthModal}) => {
   }
 
   return (
+    <>
     <div className='login-card'>
        {!isModal && <span className='cross-icon' onClick={()=>setAuthModal?.(false)}><RxCrossCircled /></span>}
         <div className='heading'>
@@ -40,11 +41,11 @@ const LoginCard: React.FC<CardProps> = ({setAuthModal}) => {
             <input type='text' id="email" name="email" placeholder='Enter your email or username' value={formData?.email} onChange={(e)=>setFormData((pre)=>({...pre, email:e.target.value}))} /> 
           </div>
           <div className='input-group'>
-            <span>
+            <div className='password-label'>
             <label htmlFor="password">Password</label>
             <label>Forget password?</label>
-            </span>
-            <br />
+            </div>
+            {/* <br /> */}
             <input type='password' id="password" name="password" placeholder='Enter your password' value={formData?.password} onChange={(e)=>setFormData((pre)=>({...pre, password:e.target.value}))} /> 
           </div>
           <div className='login'>
@@ -54,6 +55,7 @@ const LoginCard: React.FC<CardProps> = ({setAuthModal}) => {
         </form>
       
     </div>
+    </>
   )
 }
 

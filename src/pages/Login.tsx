@@ -9,7 +9,6 @@ function Login() {
   const navigate= useNavigate()
   const [isModal, setIsModal] = useState(false)
   const { isAuthenticated } = useAppContext();
-  console.log(isAuthenticated, 'isAuthenticated')
 
   useEffect(()=>{
     if(isAuthenticated){
