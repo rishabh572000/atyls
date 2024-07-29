@@ -1,0 +1,186 @@
+@import 'variables';
+
+@mixin flexBox() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p,
+h3 {
+  line-height: 0;
+}
+input{
+  outline: none;
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid $border; 
+  border-radius: 4px;
+  background-color: $theme-color;
+  color: #fff; 
+  font-size: 1em; 
+  box-sizing: border-box;
+}
+.button{
+  width: 100%;
+  background-color: $blue-button;
+  border-radius: 4px;
+  text-align: center;
+  padding: 10px;
+  font-size: 1em; 
+  color:#fff;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.App {
+
+  .heading {
+    color: red
+  }
+}
+
+.container {
+  background-color: $base-color;
+  width: 100%;
+  min-height: 100vh;
+  @include flexBox();
+}
+
+.login-card {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 463px;
+  padding: 35px 20px;
+  background-color: $theme-color;
+  position: relative;
+  border: 2px solid; 
+  border-image: linear-gradient(147deg, #969696, #343434) 1;
+
+  
+  .cross-icon{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $base-color;
+    @include flexBox();
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .heading {
+    text-align: center;
+
+    p {
+      color: $text-dark;
+      font-size: 14px;
+    }
+
+    h3 {
+      color: #fff;
+      font-size: 18px;
+      line-height: 21px;
+
+    }
+  }
+
+  form {
+    position: relative;
+
+    .input-group {
+      margin-top: 10px;
+      label {
+        color: $text-light;
+      }
+      .password-label{
+        display: flex;
+        justify-content: space-between;
+      }
+
+      input {
+       margin-top:10px
+      }
+
+      span{
+        position: relative;
+
+        .password{
+          position: absolute;
+          text-align: left;
+        }
+        .fpassword{
+          position: absolute;
+          text-align: right;
+        }
+      }
+
+
+     
+
+    }
+    .login{
+      margin-top: 15px;
+    }
+    .not-registered{
+      line-height: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.icons{
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: $theme-color;
+}
+
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+@media (max-width: 500px) {
+  .login-card {
+    width: 80%; 
+  }
+}
