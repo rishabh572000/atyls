@@ -1,0 +1,34 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*).js",
+      "destination": "/$1.js"
+    },
+    {
+      "source": "/(.*).css",
+      "destination": "/$1.css"
+    },
+    {
+      "source": "/(.*).png",
+      "destination": "/$1.png"
+    },
+    {
+      "source": "/(.*).jpg",
+      "destination": "/$1.jpg"
+    },
+    {
+      "source": "/(.*).jpeg",
+      "destination": "/$1.jpeg"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
+  
